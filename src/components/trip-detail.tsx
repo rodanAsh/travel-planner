@@ -44,7 +44,7 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                 </div>
 
                 <div className="mt-4 md:mt-0">
-                    <Link href={`/trips/${trip.id}/initerary/new`}>
+                    <Link href={`/trips/${trip.id}/itinerary/new`}>
                         <Button>
                             <Plus className="h-5 w-5 mr-2" /> Add Location
                         </Button>
@@ -67,10 +67,12 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                     </TabsList>    
 
                     <TabsContent value="overview" className="space-y-6">
+                        
                         <div className="grid md:grid-cols-2 gap-6">
-                            <h2 className="text-2xl font-semibold mb-4">Trip Summary</h2>
-                            <div className="space-y-4">
-                                <div className="fle items-start">
+                            <div>
+                                <h2 className="text-2xl font-semibold mb-4">Trip Summary</h2>
+                                <div className="space-y-4">
+                                <div className="flex items-start">
                                     <Calendar className="h-6 w-6 mr-3 text-gray-500" />
                                     <div>
                                         <p className="font-medium text-gray-700">Dates</p>
@@ -85,7 +87,12 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                                         </p>
                                     </div>
                                 </div>
+
+                                <div className="flex items-start">
+
+                                </div>
                             </div>
+                            </div>    
                         </div>
                     </TabsContent>
                 </Tabs>
