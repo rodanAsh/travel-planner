@@ -78,7 +78,7 @@ model Trip {
   user        User      @relation(fields: [userId], references: [id])
   userId      String
 
-  location Location[] 
+  locations Location[] 
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
