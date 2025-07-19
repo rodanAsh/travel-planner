@@ -128,6 +128,7 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                                 </p>
                             </div>
                         </div>
+
                     </TabsContent>
 
                     <TabsContent value="itinerary" className="sapce-y-6">
@@ -150,6 +151,27 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                                 <SortableItinerary locations={trip.locations} tripId={trip.id} />
                             )
                         } 
+
+                    </TabsContent>
+
+                    <TabsContent value="map" className="space-y-6">
+
+                            <div className="h-72 rounded-lg overflow-hidden shadow">
+                                <Map itineraries={trip.locations} />
+                            </div> 
+
+                            {
+                                trip.locations.length === 0 && (
+                                    <div className="text-center p-4">
+                                        <p>Add locations to see them on the map.</p>
+                                        <Link href={`/trips/${trip.id}/itinerary/new`}>
+                                            <Button>
+                                                <Plus className="h-5 w-5 mr-2" /> Add Location
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                )
+                            } 
 
                     </TabsContent>
                 </Tabs>

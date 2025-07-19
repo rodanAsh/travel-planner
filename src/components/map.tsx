@@ -7,7 +7,7 @@ type MapProps = {
     itineraries: Location[];
 }
 
-export default function Map({itineraries}: MapProps) {
+export default function Map({ itineraries }: MapProps) {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     })
