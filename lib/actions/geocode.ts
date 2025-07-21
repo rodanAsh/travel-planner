@@ -16,10 +16,7 @@ export async function getCountryFromCoordinates(
     );
     
     const data = await response.json();
-
-    console.log(data);
     
-
     const result = data.results[0];
     
     const countryComponent = result.address_components.find((component: any) => component.types.includes("country"));
