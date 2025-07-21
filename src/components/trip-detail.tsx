@@ -176,6 +176,14 @@ export default function TripDetailClient({ trip }: TripDetailClientProps) {
                     </TabsContent>
                 </Tabs>
             </div>
+
+            <div className="text-center">
+                <Link href={"/trips"}>
+                    <Button>
+                        Back to Trip
+                    </Button>
+                </Link>
+            </div>
         </div>
     )
 }
