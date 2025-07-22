@@ -1,5 +1,6 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MapPin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import Globe, { GlobeMethods } from 'react-globe.gl';
 
@@ -12,7 +13,7 @@ export type TransformedLocation = {
 
 export default function GlobePage() {
     const globeRef = useRef<GlobeMethods | undefined>(undefined);
-
+    const [locations, setLocations] = useState<TransformedLocation[]>([])
     const [visitedCountries, setVisitedCountries] = useState<Set<string>>(
         new Set()
     )
@@ -25,7 +26,7 @@ export default function GlobePage() {
             try {
                 const response = await fetch("/api/trips");
                 const data = await response.json();
-
+                setLocations(data);
                 const countries = new Set<string>(
                     data.map((loc: TransformedLocation) => loc.country)
                 );
@@ -59,10 +60,11 @@ export default function GlobePage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         <div className="lg:col-span-2 bg-white rounded-xl border shadow-lg overflow-hidden">
                             <div className="p-6">
-                                <h2 className="text-2xl font-semibold mb-4">See where you've been...</h2>
+                                <h2 className="text-2xl font-semibold mb-4">
+                                    See where you've been...
+                                </h2>
 
                                 <div className="h-[600px] w-full relative">
-
                                     {
                                         isLoading ? (
                                             <div className='flex items-center justify-center h-full'>
@@ -76,6 +78,7 @@ export default function GlobePage() {
                                                 backgroundColor="rgba(0,0,0,0)"
                                                 pointColor={() => "#FF5733"}
                                                 pointLabel="name"
+                                                pointsData={locations}
                                                 pointRadius={0.5}
                                                 pointAltitude={0.1}
                                                 pointsMerge={true}
@@ -105,9 +108,22 @@ export default function GlobePage() {
                                                     <p className='text-sm text-blue-800'>
                                                         You've visited {" "}
                                                         <span className='font-bold'>
-                                                            {visitedCountries.size}
+                                                            {visitedCountries.size} countries.
                                                         </span>
                                                     </p>
+                                                </div>
+
+                                                <div className='space-y-2 max-h-[500px] overflow-y-auto pr-2'>
+                                                    {
+                                                        Array.from(visitedCountries)
+                                                            .sort()
+                                                            .map((country, key) => (
+                                                                <div key={key} className='flex items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-colors border border-gray-100'>
+                                                                    <MapPin className='h-4 w-4 text-red-500' />
+                                                                    <span className='font-medium'>{country}</span>
+                                                                </div>
+                                                            ))
+                                                    }
                                                 </div>
                                             </div>
                                         )
