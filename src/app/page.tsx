@@ -64,6 +64,7 @@ export default async function LandingPage() {
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
+
               <div className="p-6 rounded-lg border border-gray-100 shadow-sm bg-white">
                 <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
                   <MapIcon className="h-6 w-6 text-primary" />
@@ -77,7 +78,7 @@ export default async function LandingPage() {
               </div>
 
               <div className="p-6 rounded-lg border border-gray-100 shadow-sm bg-white">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mb-4">
                   <svg
                     className="h-6 w-6 text-travel-amber"
                     viewBox="0 0 24 24"
@@ -97,7 +98,7 @@ export default async function LandingPage() {
               </div>
 
               <div className="p-6 rounded-lg border border-gray-100 shadow-sm bg-white">
-                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
                   <svg
                     className="h-6 w-6 text-green-500"
                     viewBox="0 0 24 24"

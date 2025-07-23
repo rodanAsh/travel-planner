@@ -27,7 +27,7 @@ export default function NewLocationClient({ tripId }: { tripId: string }) {
                                 name="address" 
                                 type="text" 
                                 required 
-                                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline focus:outline-blue-500 focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
                         <Button type="submit" className="w-full">{ isPending ? "Adding..." : "Add Location" }</Button>
