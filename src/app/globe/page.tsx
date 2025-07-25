@@ -61,7 +61,7 @@ export default function GlobePage() {
                         <div className="lg:col-span-2 bg-white rounded-xl border shadow-lg overflow-hidden">
                             <div className="p-6">
                                 <h2 className="text-2xl font-semibold mb-4">
-                                    See where you've been...
+                                    See where you&apos;ve been...
                                 </h2>
 
                                 <div className="h-[600px] w-full relative">
@@ -106,7 +106,7 @@ export default function GlobePage() {
                                             <div className='space-y-4'>
                                                 <div className='bg-blue-50 p-4 rounded-lg'>
                                                     <p className='text-sm text-blue-800'>
-                                                        You've visited {" "}
+                                                        You&apos;e visited {" "}
                                                         <span className='font-bold'>
                                                             {visitedCountries.size} countries.
                                                         </span>

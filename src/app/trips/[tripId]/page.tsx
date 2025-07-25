@@ -1,4 +1,4 @@
-import TripDetailClient, { tripWithLocation } from "@/components/trip-detail";
+import TripDetailClient from "@/components/trip-detail";
 import { auth } from "../../../../auth";
 import { prisma } from "../../../../lib/prisma";
 
