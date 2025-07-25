@@ -1,4 +1,5 @@
 "use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
@@ -106,7 +107,7 @@ export default function GlobePage() {
                                             <div className='space-y-4'>
                                                 <div className='bg-blue-50 p-4 rounded-lg'>
                                                     <p className='text-sm text-blue-800'>
-                                                        You&apos;e visited {" "}
+                                                        You&apos;ve visited {" "}
                                                         <span className='font-bold'>
                                                             {visitedCountries.size} countries.
                                                         </span>
