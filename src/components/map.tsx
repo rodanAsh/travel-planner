@@ -13,7 +13,6 @@ export default function Map({ itineraries }: MapProps) {
 
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-        libraries: ['marker'],
     })
 
     if (loadError) return <div>Error loading maps</div>
