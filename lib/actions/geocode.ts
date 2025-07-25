@@ -1,5 +1,5 @@
 
-type GeocodeResult= {
+export type GeocodeResult= {
     country: string;
     formattedAddress: string;
 }
@@ -8,7 +8,6 @@ export async function getCountryFromCoordinates(
     lat: number, 
     lng: number
 ): Promise<GeocodeResult> {
-    // console.log("lat", lat, "lng", lng);
     
     const apiKey = process.env.GOOGLE_MAPS_API_KEY!;
     const response = await fetch(
