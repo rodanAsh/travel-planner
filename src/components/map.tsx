@@ -13,6 +13,7 @@ export default function Map({ itineraries }: MapProps) {
 
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+        libraries: ['marker'],
     })
 
     if (loadError) return <div>Error loading maps</div>
@@ -23,17 +24,19 @@ export default function Map({ itineraries }: MapProps) {
         ? { lat: itineraries[0].lat, lng: itineraries[0].lng } 
         : { lat: 0, lng: 0 };
 
-     const onMapLoad = (map: google.maps.Map) => {
+     const onMapLoad = async (map: google.maps.Map) => {
         mapRef.current = map;
 
+        const { AdvancedMarkerElement } = await google.maps.importLibrary('marker') as google.maps.MarkerLibrary;
+
         itineraries.forEach(location => {
-            new google.maps.marker.AdvancedMarkerElement({
+            new AdvancedMarkerElement({
                 map,
                 position: { lat: location.lat, lng: location.lng },
                 title: location.locationTitle,
             });
         });
-    }
+    };
 
     return (
         <GoogleMap 
