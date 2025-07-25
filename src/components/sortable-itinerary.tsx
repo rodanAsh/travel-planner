@@ -1,11 +1,11 @@
 "use client";
 
-import { Location } from "@/generated/prisma"
 import { DndContext, closestCenter, DragEndEvent } from "@dnd-kit/core"
 import { arrayMove, SortableContext, verticalListSortingStrategy, useSortable } from "@dnd-kit/sortable"
 import { useId, useState } from "react";
 import { CSS } from '@dnd-kit/utilities'
 import { reorderItinerary } from "../../lib/actions/reorder-itinerary";
+import { Location } from "@prisma/client";
 
 
 type SortableItineraryProps = {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Location, Trip } from "@/generated/prisma";
+
 import Image from "next/image";
 import { Calendar, MapPin, Plus } from 'lucide-react'
 import Link from "next/link";
@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { useState } from "react";
 import Map from "./map";
 import SortableItinerary from "./sortable-itinerary";
+import { Location, Trip } from "@prisma/client";
 
 export type tripWithLocation = Trip & {
     locations: Location[]
