@@ -51,6 +51,7 @@ export async function GET() {
 
     return NextResponse.json(transformedLocations);
   } catch (_err) {
+    console.error("Error fetching trips:", _err);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
